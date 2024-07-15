@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+
+</head>
+
+<body>
+    <div class="top-border-shadow">
+        <div id="notification" class="notification">Submitted successfully!</div>
+        <div class="allsection">
+            <div class="main">
+
+
+                <div class="section1">
+                    <p class="title">AWARD WINNING</p>
+                    <h1 class="heading">DIGITAL MARKETING AGENCY</h1>
+                    <p class="content">Morbi sed locus risus finibus teugiat et termentum nibh.pellentesque vitae ante elite fringilla ac at purus, Morbi sed lacus nec risus finibus feugiat et fermentum.</p>
+                    <button class="btn" onclick="displayForm()">CONTACT US</button>
+                </div>
+                <div class="image">
+                    <img src="/img/img1.png" alt="img not found" />
+                </div>
+                <div class="form">
+                    <div class="icon">
+                        <i class="fas fa-xmark fa-lg" onclick="closeForm()" style="color: black;"></i>
+                        <h1 class="heading2">Talk to us</h1>
+                    </div>
+                    <form id="contactForm">
+                        <label for="email">Working Email*</label><br/>
+                        <input id="email" class="email" type="text" />
+                        <span id="emailError" class="error"></span><br/>
+
+                        <div class="form2">
+                            <div>
+                                <label for="firstName">First name*</label><br/>
+                                <input id="firstName" class="firstName" type="text" />
+                                <span id="firstNameError" class="error"></span><br/>
+                            </div>
+                            <div>
+                                <label for="lastName">Last name*</label><br/>
+                                <input id="lastName" class="lastName" type="text" />
+                                <span id="lastNameError" class="error"></span><br/>
+                            </div>
+                        </div>
+
+                        <div class="text">
+                            <input id="check" class="check" type="checkbox" />
+                            <label for="check" class="content1">I agree to Fyle's terms and conditions, and provide consent to send me communication</label><br/>
+
+                        </div>
+                        <div class="errors">
+                            <button type="button" class="btn1" onclick="validateForm()">CONTACT US</button>
+                            <span id="checkError" class="error"></span><br/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div>
+                <div class="page2-main">
+                    <div class="section2">
+                        <p class="title">WHAT WE DO</p>
+                        <h2 class="heading">SERVICES PROVIDE FOR YOU</h2>
+                    </div>
+                    <div class="section2 " id="section2">
+                        <p class="content">Morbi seal locus nec risusfinibus feugiat etfermentum nibh. Pellentesque vitae ante at elit fringilla ac at purus. Morbi seal lacus nec risus finibus feugiat et fermentum.
+                        </p>
+                    </div>
+                </div>
+                <div class="imgs">
+
+                </div>
+                <div class="dots">
+
+                </div>
+            </div>
+            <script src="web2.js"></script>
+            <div>
+                <div>
+                    <p class="title3 " style="margin-top: 100px;">OUR PROJECT</p>
+                    <p class="heading3">WHY WE ARE BEST</p>
+                </div>
+                <div class="page3-main">
+                    <div class="image3 ">
+                        <img src="/img/page3-img1.jpg" alt='img not found' class="images" />
+                    </div>
+                    <div class="page3-content">
+
+                    </div>
+                </div>
+            </div>
+            <script src="web3.js"></script>
+            <div class="page4">
+                <div>
+                    <p class="title3">PERTS GROWTS</p>
+                    <P class="heading3">OUR COMPANY GROWTH</P>
+                </div>
+                <div class="page4-main">
+                    <div class="timer">
+                        <img class="page4-img" src="/img/page4-img1.png" />
+                        <span class="valuesDisplay" data-val="199">0+</span>
+                        <p class="content">Staticfied Customers</p>
+                    </div>
+                    <div class="timer">
+                        <img class="page4-img" src="/img/page4-img2.png" />
+                        <span class="valuesDisplay" data-val="1591">0+</span>
+                        <p class="content">Days Of Operation</p>
+                    </div>
+                    <div class="timer">
+                        <img class="page4-img" src="/img/page4-img3.png" />
+                        <span class="valuesDisplay" data-val="283">0+</span>
+                        <p class="content">Complete Project</p>
+                    </div>
+                    <div class=" timer ">
+                        <img class="page4-img " src="/img/page4-img4.png " />
+                        <span class="valuesDisplay " data-val="75 ">0</span>
+                        <p class="content ">Win Awards</p>
+                    </div>
+                </div>
+                <script src="web4.js ">
+                </script>
+
+            </div>
+        </div>
+    </div>
+    <script src="web.js "></script>
+</body>
+
+</html>
