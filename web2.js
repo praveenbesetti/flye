@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const webDiv = document.createElement('div');
             webDiv.classList.add('web');
             webDiv.style.display = 'none';
-            webDiv.style.cursor = 'pointer';
+            imgsContainer.appendChild(webDiv);
 
             // Create and append the <i> element with FontAwesome icon
             const icon = document.createElement('i');
@@ -42,33 +42,32 @@ document.addEventListener("DOMContentLoaded", () => {
             paragraph.classList.add('content2');
             webDiv.appendChild(paragraph);
 
-            // Create and append the <a> element for 'READ MORE'
-            const readMoreDiv = document.createElement('div');
-            readMoreDiv.classList.add('box');
-            readMoreDiv.style.cursor = 'pointer';
-            // Create the anchor tag for the link
-            const link = document.createElement('a');
-            link.href = 'https://www.fylehq.com/';
-            link.classList.add('box');
-            link.style.textDecoration = 'none'; // Optional: Remove underline
-            readMoreDiv.appendChild(link);
+            let anchorElement = document.createElement('a');
+            anchorElement.href = 'https://www.fylehq.com/';
+            anchorElement.style.textDecoration = "none";
+            anchorElement.style.cursor = 'pointer';
+            webDiv.appendChild(anchorElement);
 
-            // Create and append the <p> element for 'READ MORE' inside the anchor tag
-            const read = document.createElement('p');
-            read.textContent = 'READ MORE';
-            read.classList.add('read');
-            link.appendChild(read);
+            // Create a button element
+            let buttonElement = document.createElement('button');
+            buttonElement.classList.add('box');
+            buttonElement.style.cursor = 'pointer';
+            buttonElement
+            anchorElement.appendChild(buttonElement);
 
-            // Create and append the <i> element for 'icon' inside the anchor tag
-            const icon2 = document.createElement('i');
-            icon2.classList.add('fa-solid', 'fa-arrow-right', 'fa-xl', 'icon2');
-            icon2.style.color = '#fb095e';
-            link.appendChild(icon2);
+            // Create a span element for "READ MORE"
+            let spanElement = document.createElement('span');
+            spanElement.classList.add('read');
+            spanElement.textContent = 'READ MORE';
 
-            webDiv.appendChild(readMoreDiv);
+            // Create an icon element
+            let iconElement = document.createElement('i');
+            iconElement.classList.add('fa-solid', 'fa-arrow-right', 'fa-xl', 'icon2');
 
-            // Append webDiv after the img
-            imgsContainer.appendChild(webDiv);
+            // Append span and icon to the button
+            buttonElement.appendChild(spanElement);
+            buttonElement.appendChild(iconElement);
+
 
             // Variable to track whether webDiv is already shown
             let webDivShown = false;
@@ -85,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     img.classList.remove('active2');
                     img.style.display = 'none';
                     webDiv.style.display = 'block';
-
+                    webDiv.style.cursor = 'pointer';
                     document.querySelectorAll('.dot').forEach(dot => {
                         dot.classList.remove('active');
                     });
