@@ -11,9 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
             // Create img element
             const img = document.createElement('img');
             img.className = 'mode';
-            img.style.zIndex = '1px'; // Added 'mode' class for animation
+            // Added 'mode' class for animation
             img.src = element;
             img.alt = "image not found";
+            img.style.opacity = 0;
 
             // Append image to imgsContainer
             imgsContainer.appendChild(img);
@@ -72,16 +73,40 @@ document.addEventListener("DOMContentLoaded", () => {
             // Variable to track whether webDiv is already shown
             let webDivShown = false;
 
-            // Add mouseenter event to show webDiv and activate dot
-            img.addEventListener('mouseenter', () => {
-                if (!animationsComplete) return; // Disable mouse events during animation
+            // Add mouseenter and touchstart event to show webDiv and activate dot
+            img.addEventListener('touchstart', () => {
+                // Disable mouse events during animation
+                showWebDiv();
+            });
 
+            img.addEventListener('', () => {
+                if (!animationsComplete) return;
+                document.querySelectorAll('.web').forEach(div => {
+                    div.style.display = 'none';
+                });
+                img.classList.remove('active2');
+                img.style.opacity = 1;
+                img.style.display = 'none';
+                webDiv.style.display = 'block';
+                webDiv.style.cursor = 'pointer';
+                document.querySelectorAll('.dot').forEach(dot => {
+                    dot.classList.remove('active');
+                });
+                dotes.children[index].classList.add('active1');
+                dotes.children[index].querySelector('.dot').classList.add('active');
+
+                webDivShown = true; // Disable mouse events during animation
+
+            });
+
+            function showWebDiv() {
                 if (!webDivShown) {
                     // Hide all other webDivs and show current webDiv
                     document.querySelectorAll('.web').forEach(div => {
                         div.style.display = 'none';
                     });
                     img.classList.remove('active2');
+                    img.style.opacity = 1;
                     img.style.display = 'none';
                     webDiv.style.display = 'block';
                     webDiv.style.cursor = 'pointer';
@@ -93,13 +118,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     webDivShown = true;
                 }
+            }
+            img.addEventListener('mouseenter', () => {
+                if (!animationsComplete) return; // Disable mouse events during animation
+                showWebDiv();
             });
-
-            // Add mouseleave event to hide webDiv and deactivate dot
+            // Add mouseleave and touchend event to hide webDiv and deactivate dot
             img.addEventListener('mouseleave', () => {
                 if (!animationsComplete) return; // Disable mouse events during animation
+                hideWebDiv();
+            });
 
+            img.addEventListener('touchend', () => {
+                // Disable mouse events during animation
+                hideWebDiv();
+            });
+
+            function hideWebDiv() {
                 if (webDivShown) {
+                    img.classList.remove('active2');
                     webDiv.style.display = 'none';
                     img.style.display = 'block';
 
@@ -109,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     webDivShown = false;
                 }
-            });
+            }
 
             // Create dot for each image
             const swap = document.createElement('span');
@@ -148,5 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+
     addImages();
+    document.querySelector('.img').display = None;
 });

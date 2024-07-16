@@ -293,6 +293,7 @@ i {
     width: 350px;
     height: 460px;
     border-radius: 10px;
+    opacity: 1;
 }
 
 .web {
@@ -395,7 +396,7 @@ i {
 
 .aws {
     margin-top: 30%;
-    margin-left: 40%;
+    margin-left: 45%;
     margin-bottom: 40px;
 }
 
@@ -457,7 +458,7 @@ i {
 
 .slide {
     transform: translateX(-200%);
-    transition: 0.5s ease-in-out;
+    transition: 0.3s ease-in-out;
     z-index: 1px;
 }
 
@@ -468,10 +469,12 @@ i {
     0% {
         transform: translateX(-200%);
         z-index: -1px;
+        opacity: 1;
     }
     100% {
         transform: translateX(0%);
         z-index: -1px;
+        opacity: 1;
     }
 }
 
@@ -573,6 +576,9 @@ i {
     .dots {
         margin-left: 45%;
     }
+    .title {
+        text-align: center;
+    }
     .page4-main {
         flex-direction: column;
         margin: auto;
@@ -580,6 +586,9 @@ i {
     }
     .timer {
         margin-bottom: 20px;
+    }
+    #content2 {
+        margin-left: 20px;
     }
 }
 
@@ -592,7 +601,7 @@ i {
         margin-top: 30px;
     }
     .content {
-        margin: 40px;
+        margin: 10px;
     }
     .btn {
         margin-top: 0px;
@@ -616,6 +625,9 @@ i {
         flex-wrap: wrap;
         margin: auto;
         align-items: center;
+    }
+    #content2 {
+        margin-left: 10px;
     }
 }
 
